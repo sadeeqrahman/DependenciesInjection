@@ -6,19 +6,20 @@ import com.encoders.dependenciesinjection.MessageSend
 import com.encoders.dependenciesinjection.Notification
 import dagger.Module
 import dagger.Provides
+import javax.inject.Inject
 import javax.inject.Named
 
 @Module
-class NotifiacationServiceModule {
+class NotifiacationServiceModule(val count: Int) {
 
-    @Named("Message")
+
     @Provides
     fun getMessageService(): Notification {
-        return MessageSend()
+        return MessageSend(count)
     }
 
 
-
+    @Named("Message")
     @Provides
     fun getEmailService(emailServices: EmailServices): Notification {
         return emailServices

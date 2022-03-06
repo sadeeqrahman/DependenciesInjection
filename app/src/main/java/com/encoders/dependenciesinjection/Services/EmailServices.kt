@@ -18,9 +18,9 @@ class EmailServices @Inject constructor() : Notification{
 }
 
 
-class MessageSend : Notification{
+class MessageSend(val count: Int) : Notification{
     override fun send(to: String, from: String, body: String) {
-        Log.e("Message Sent","Confirmation Message Send Successfully")
+        Log.e("Message Sent",count.toString())
     }
 
 }

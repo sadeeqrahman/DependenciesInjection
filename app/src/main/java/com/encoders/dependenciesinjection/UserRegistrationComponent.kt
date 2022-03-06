@@ -7,11 +7,16 @@ import dagger.Component
 
 @Component(modules = [UserRepositoryModule::class, NotifiacationServiceModule::class])
 interface UserRegistrationComponent {
-    fun getUserRegistrationService() : UserRegistrationService
-    fun emailservices(): EmailServices
+//    fun getUserRegistrationService() : UserRegistrationService
+//    fun emailservices(): EmailServices
 
 
     fun inject(mainActivity: MainActivity)
 
+
+    @Component.Factory
+    interface  factory{
+
+    }
 
 }
